@@ -1,6 +1,6 @@
 solutions = [
   { "name"        : 'src/electron',
-    "url"         : 'https://github.com/win32ss/supermium-electron',
+    "url"         : 'https://github.com/KenCorma/supermium-electron',
     "deps_file"   : 'DEPS',
     "managed"     : False,
     "custom_deps" : {
