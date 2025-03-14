@@ -22,6 +22,12 @@ if (isInstalled()) {
 const platform = process.env.npm_config_platform || process.platform;
 let arch = process.env.npm_config_arch || process.arch;
 
+if (platform !== 'win32')
+{
+  // Supermium is only available on Windows.
+  process.exit('Supermium is Windows Only');
+}
+
 if (platform === 'darwin' && process.platform === 'darwin' && arch === 'x64' &&
     process.env.npm_config_arch === undefined) {
   // When downloading for macOS ON macOS and we think we need x64 we should
@@ -40,7 +46,7 @@ if (platform === 'darwin' && process.platform === 'darwin' && arch === 'x64' &&
 downloadArtifact({
   version,
   artifactName: 'electron',
-  mirrorOptions: { mirror: "https://github.com/Alex313031/electron-22/releases/download/" },
+  mirrorOptions: { mirror: "https://github.com/KenCorma/supermium-electron/releases/download/" },
   force: process.env.force_no_cache === 'true',
   cacheRoot: process.env.electron_config_cache,
   unsafelyDisableChecksums: true,
